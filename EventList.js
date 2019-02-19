@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, FlatList} from 'react-native';
 import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
 import EventCard from './EventCard';
 
 
@@ -13,9 +14,14 @@ const styles = StyleSheet.create({
 })
 
 class EventList extends Component {
-    state = {
-        events: []
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: []
+        };
+        this.handleAddEventPress = this.handleAddEventPress.bind(this)
+    }
+
     static navigationOptions = {
         title: 'Your Events',
     };
@@ -36,7 +42,8 @@ class EventList extends Component {
         }));
         this.setState({events});
     };
-    handleAddEventPress(){
+
+    handleAddEventPress() {
         this.props.navigation.navigate('Form')
     }
 
@@ -44,6 +51,7 @@ class EventList extends Component {
         const {events} = this.state;
         return [
             <FlatList
+                key="eventList"
                 style={styles.list}
                 data={events}
                 renderItem={({item}) => <EventCard event={item}/>}
