@@ -9,10 +9,10 @@ import EventForm from './EventForm';
 //     'Warning: componentWillRecieveProps is deprecated'
 // ]);
 const AppNavigator = createStackNavigator({
-    list: {
+    List: {
         screen: EventList
     },
-    form: {
+    Form: {
         screen: EventForm
     }
 });
