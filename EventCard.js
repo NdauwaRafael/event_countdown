@@ -10,7 +10,13 @@ import {formatDate, getCountdownParts} from './api';
 const styles = StyleSheet.create({
     
 })
-export default EventCard = ({event})=> { 
+export default EventCard = ({event})=> {
+    const {
+        days,
+        hours,
+        minutes,
+        seconds
+    } = getCountdownParts(event.date);
     return (
         <View style={styles.card}>
             <View style={styles.cardHeader}>
@@ -28,7 +34,7 @@ export default EventCard = ({event})=> {
                     <Text style={styles.containerLabel}>Hours</Text>
                 </View>
                 <View style={styles.counter}>
-                    <Text style={styles.containerText}>{minute}</Text>
+                    <Text style={styles.containerText}>{minutes}</Text>
                     <Text style={styles.containerLabel}>Minutes</Text>
                 </View>
                 <View style={styles.counter}>
