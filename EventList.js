@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     list: {
         flex: 1,
         paddingTop: 20,
-        marginTop: 40,
         backgroundColor: '#F3F3F3'
     }
 })
@@ -14,7 +13,10 @@ const styles = StyleSheet.create({
 class EventList extends Component {
     state = {
         events: []
-    }
+    };
+    static navigationOptions = {
+        title: 'Home',
+    };
 
     componentDidMount() {
         setInterval(()=>{
