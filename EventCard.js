@@ -7,7 +7,7 @@ import {
 import PropTypes from 'prop-types';
 import {formatDate, getCountdownParts} from './api';
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     
 })
 export default EventCard = ({event})=> { 
