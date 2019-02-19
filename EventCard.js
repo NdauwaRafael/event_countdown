@@ -6,3 +6,17 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {formatDate, getCountdownParts} from './api';
+
+const style = StyleSheet.create({
+    
+})
+export default EventCard = ({event})=> { 
+
+};
+
+EventCard.propTypes = {
+    event: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        date: PropTypes.instanceOf(date)
+    })
+}
