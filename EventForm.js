@@ -11,7 +11,7 @@ class EventForm extends Component {
     };
 
     handleAddPress() {
-        this.props.navigation.navigate('Form')
+        // this.props.navigation.navigate('Form')
     }
 
     render() {
