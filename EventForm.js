@@ -6,6 +6,10 @@ import {
 } from 'react-native';
 
 class EventForm extends Component {
+    static navigationOptions = {
+        title: 'Add Event',
+    };
+
     handleAddPress() {
 
     }
