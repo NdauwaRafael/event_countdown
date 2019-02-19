@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, FlatList} from 'react-native';
+import {StyleSheet, FlatList, Text} from 'react-native';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import EventCard from './EventCard';
@@ -10,7 +10,12 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 20,
         backgroundColor: '#F3F3F3'
-    }
+    },
+    actionButtonIcon: {
+        fontSize: 20,
+        height: 22,
+        color: 'white',
+    },
 })
 
 class EventList extends Component {
@@ -59,9 +64,10 @@ class EventList extends Component {
             />,
             <ActionButton
                 buttonColor="rgba(231,76,60,1)"
-                onPress={this.handleAddEventPress}
                 key="addEventButton">
-
+                <ActionButton.Item buttonColor='#9b59b6' title="Add New Event" onPress={this.handleAddEventPress}>
+                    <Icon name="md-create" style={styles.actionButtonIcon}/>
+                </ActionButton.Item>
             </ActionButton>
         ]
     }
