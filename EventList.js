@@ -15,7 +15,7 @@ class EventList extends Component {
         events: []
     };
     static navigationOptions = {
-        title: 'Home',
+        title: 'Your Events',
     };
 
     componentDidMount() {
