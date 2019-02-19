@@ -35,10 +35,28 @@ const styles = StyleSheet.create({
         marginLeft: 7,
         textAlign: 'left'
     },
-    counterContainer: {},
-    counter: {},
-    containerText: {},
-    containerLabel: {}
+    counterContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingLeft: "5%",
+        paddingRight: "3%"
+    },
+    counter: {
+        width: "25%",
+        flex: 1
+    },
+    containerText: {
+        fontSize: 30,
+        textAlign: 'center'
+    },
+    containerLabel: {
+        fontSize: 13,
+        fontWeight: '100',
+        color: '#a3a3a3',
+        textAlign: 'center',
+        paddingTop: 0
+    }
 });
 export default EventCard = ({event})=> {
     const {
