@@ -8,8 +8,38 @@ import PropTypes from 'prop-types';
 import {formatDate, getCountdownParts} from './api';
 
 const styles = StyleSheet.create({
-    
-})
+    card: {
+        backgroundColor: '#fff',
+        flex: 1,
+        padding: 1,
+        paddingTop: 10,
+        paddingBottom: 10,
+        margin: 10,
+        marginTop: 5,
+        marginBottom: 5
+    },
+    cardHeader: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    date: {
+        fontWeight: '200',
+        fontSize: 15,
+        color: '#bdbdbd',
+        width: '30%',
+        textAlign: 'left'
+    },
+    title: {
+        fontSize: 15,
+        fontWeight: '300',
+        marginLeft: 7,
+        textAlign: 'left'
+    },
+    counterContainer: {},
+    counter: {},
+    containerText: {},
+    containerLabel: {}
+});
 export default EventCard = ({event})=> {
     const {
         days,
