@@ -11,7 +11,14 @@ const styles = StyleSheet.create({
     
 })
 export default EventCard = ({event})=> { 
-
+    return (
+        <View style={styles.card}>
+            <View style={styles.cardHeader}>
+                <Text style={styles.date}>{formatDate(event.date)}</Text>
+                <Text style={styles.title}>{formatDate(event.title)}</Text>
+            </View>
+        </View>
+    )
 };
 
 EventCard.propTypes = {
