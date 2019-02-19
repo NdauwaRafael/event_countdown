@@ -15,7 +15,8 @@ class EventList extends Component {
         return (
             <FlatList
             data={events}
-            renderItem={({item})=><Text key={item.id}>{item.title}</Text>}
+            renderItem={({item})=><Text>{item.title}</Text>}
+            keyExtractor={item => item.id}
              />
         )
     }
