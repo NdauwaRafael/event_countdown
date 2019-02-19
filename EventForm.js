@@ -11,14 +11,14 @@ class EventForm extends Component {
     };
 
     handleAddPress() {
-        // this.props.navigation.navigate('Form')
+        this.props.navigation.navigate('List')
     }
 
     render() {
         return (
             <View>
                 <TouchableHighlight
-                    onPress={this.handleAddPress}>
+                    onPress={this.handleAddPress.bind(this)}>
                     <Text>Add</Text>
                 </TouchableHighlight>
             </View>
