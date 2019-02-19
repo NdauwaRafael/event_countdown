@@ -7,12 +7,11 @@ YellowBox.ignoreWarnings([
     'Warning: componentWillMount is deprecated',
     'Warning: componentWillRecieveProps is deprecated'
 ]);
-export default class App extends React.Component {
-    render() {
-        return (
-            <EventList/>
-        );
+
+export default StackNavigator({
+    list: {
+        screen: EventList
     }
-}
+})
 
 
