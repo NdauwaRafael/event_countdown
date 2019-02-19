@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, FlatList} from 'react-native';
-import EventCard from './EventCard'
+import ActionButton from 'react-native-action-button';
+import EventCard from './EventCard';
+
 
 const styles = StyleSheet.create({
     list: {
@@ -19,9 +21,9 @@ class EventList extends Component {
     };
 
     componentDidMount() {
-        setInterval(()=>{
+        setInterval(() => {
             this.setState({
-                events: this.state.events.map(evt=>({
+                events: this.state.events.map(evt => ({
                     ...evt,
                     timer: Date.now()
                 }))
@@ -33,18 +35,27 @@ class EventList extends Component {
             date: new Date(e.date)
         }));
         this.setState({events});
+    };
+    handleAddEventPress(){
+        this.props.navigation.navigate('Form')
     }
 
     render() {
         const {events} = this.state;
-        return (
+        return [
             <FlatList
                 style={styles.list}
                 data={events}
                 renderItem={({item}) => <EventCard event={item}/>}
                 keyExtractor={item => item.id}
-            />
-        )
+            />,
+            <ActionButton
+                buttonColor="rgba(231,76,60,1)"
+                onPress={this.handleAddEventPress}
+                key="addEventButton">
+
+            </ActionButton>
+        ]
     }
 }
 
