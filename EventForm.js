@@ -7,6 +7,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 import DatePicker from 'react-native-modal-datetime-picker';
+import {formatDateTime} from "./api";
 
 const styles = StyleSheet.create({
     fieldContainer: {
@@ -45,11 +46,14 @@ class EventForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            event_title: ''
+            event_title: '',
+            event_date: '',
+            showDatePicker: true
         };
 
         this.handleAddPress = this.handleAddPress.bind(this);
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
+        this.handleDatePress = this.handleDatePress.bind(this);
     }
 
     static navigationOptions = {
@@ -64,10 +68,13 @@ class EventForm extends Component {
         this.setState({
             event_title: value
         })
+    },
+    handleDatePress(){
+
     }
 
     render() {
-        const {event_title} = this.state;
+        const {event_title, event_date, showDatePicker} = this.state;
         return (
             <View style={{flex: 1}}>
                 <View style={styles.fieldContainer}>
@@ -79,7 +86,12 @@ class EventForm extends Component {
                         spellCheck={false}/>
 
                     <TextInput
-                    style={[styles.text, styles.borderTop]}/>
+                    style={[styles.text, styles.borderTop]}
+                    placeholder="Event Date"
+                    value={formatDateTime(event_date.toString())}
+                    spellCheck={false}
+                    editable={showDatePicker}
+                    onFocus={this.handleDatePress}/>
 
                 </View>
                 <TouchableHighlight
