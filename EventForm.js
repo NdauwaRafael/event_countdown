@@ -23,9 +23,16 @@ const styles = StyleSheet.create({
 });
 
 class EventForm extends Component {
-    state = {
-        event_title: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            event_title: ''
+        };
+
+        this.handleAddPress = this.handleAddPress.bind(this);
+        this.handleChangeTitle = this.handleChangeTitle.bind(this);
     }
+
     static navigationOptions = {
         title: 'Add Event',
     };
