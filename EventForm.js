@@ -68,9 +68,11 @@ class EventForm extends Component {
         this.setState({
             event_title: value
         })
-    },
+    };
     handleDatePress(){
-
+        this.setState({
+            showDatePicker: true
+        })
     }
 
     render() {
@@ -90,7 +92,7 @@ class EventForm extends Component {
                     placeholder="Event Date"
                     value={formatDateTime(event_date.toString())}
                     spellCheck={false}
-                    editable={showDatePicker}
+                    editable={!showDatePicker}
                     onFocus={this.handleDatePress}/>
 
                 </View>
