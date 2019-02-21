@@ -76,7 +76,12 @@ class EventForm extends Component {
             showDatePicker: true
         })
     }
-    handleDatePicked(){}
+
+    handleDatePicked(date){
+        this.setState({
+            event_date: date
+        })
+    }
     handleDatePickerHide(){
         this.setState({
             showDatePicker: false
