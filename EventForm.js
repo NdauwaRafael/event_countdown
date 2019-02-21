@@ -94,7 +94,9 @@ class EventForm extends Component {
                     spellCheck={false}
                     editable={!showDatePicker}
                     onFocus={this.handleDatePress}/>
-                    <DateTimePicker />
+                    <DateTimePicker
+                    isVisible={showDatePicker}
+                    />
 
                 </View>
                 <TouchableHighlight
