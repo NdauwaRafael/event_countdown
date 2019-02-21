@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
+    TextInput,
+    StyleSheet,
     TouchableHighlight
 } from 'react-native';
 
@@ -11,7 +13,7 @@ class EventForm extends Component {
     };
 
     handleAddPress() {
-        this.props.navigation.navigate('List')
+        this.props.navigation.goBack()
     }
 
     render() {
