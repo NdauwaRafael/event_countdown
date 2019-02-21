@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
 
     },
     borderTop: {
-        
+        borderColor: "#edeeef",
+        borderTopWidth: 0.5
     },
     button: {
         height: 50,
