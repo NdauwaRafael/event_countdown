@@ -80,7 +80,8 @@ class EventForm extends Component {
     handleDatePicked(date){
         this.setState({
             event_date: date
-        })
+        });
+        this.handleDatePickerHide()
     }
     handleDatePickerHide(){
         this.setState({
