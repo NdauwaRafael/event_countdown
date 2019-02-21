@@ -29,6 +29,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 10,
         borderRadius: 5
+    },
+    buttonText: {
+        color: '#fff',
+        fontSize: 18
     }
 });
 
