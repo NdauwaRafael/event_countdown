@@ -76,7 +76,7 @@ class EventForm extends Component {
                 <TouchableHighlight
                     style={styles.button}
                     onPress={this.handleAddPress}>
-                    <Text style={styles.buttontext}>Add</Text>
+                    <Text style={styles.buttonText}>Add</Text>
                 </TouchableHighlight>
             </View>
         );
