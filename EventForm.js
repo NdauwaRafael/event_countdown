@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
 
     },
+    borderTop: {
+        
+    },
     button: {
         height: 50,
         backgroundColor: "#48BBEC",
@@ -73,6 +76,10 @@ class EventForm extends Component {
                         value={event_title}
                         onChangeText={this.handleChangeTitle}
                         spellCheck={false}/>
+
+                    <TextInput
+                    style={[styles.text, styles.borderTop]}/>
+
                 </View>
                 <TouchableHighlight
                     style={styles.button}
