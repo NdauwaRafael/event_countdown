@@ -48,7 +48,7 @@ class EventForm extends Component {
         this.state = {
             event_title: '',
             event_date: '',
-            showDatePicker: true
+            showDatePicker: false
         };
 
         this.handleAddPress = this.handleAddPress.bind(this);
