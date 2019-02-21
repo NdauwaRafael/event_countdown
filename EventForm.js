@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
 });
 
 class EventForm extends Component {
+    state = {
+            event_title: ''
+    }
     static navigationOptions = {
         title: 'Add Event',
     };
@@ -32,12 +35,14 @@ class EventForm extends Component {
     }
 
     render() {
+        const {event_title} = this.state;
         return (
             <View style={{flex: 1}}>
                 <View style={styles.fieldContainer}>
                     <TextInput
                         style={styles.tetx}
                         placeholder="Event Title"
+                        value={event_title}
                         spellCheck={false}/>
                 </View>
                 <TouchableHighlight
