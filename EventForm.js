@@ -13,7 +13,13 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         backgroundColor: '#fff'
     },
-    text: {}
+    text: {
+        height: 40,
+        margin: 0,
+        marginRight: 7,
+        paddingLeft: 10,
+        
+    }
 });
 class EventForm extends Component {
     static navigationOptions = {
