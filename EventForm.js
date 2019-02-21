@@ -6,7 +6,7 @@ import {
     StyleSheet,
     TouchableHighlight
 } from 'react-native';
-import DatePicker from 'react-native-modal-datetime-picker';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 import {formatDateTime} from "./api";
 
 const styles = StyleSheet.create({
@@ -94,6 +94,7 @@ class EventForm extends Component {
                     spellCheck={false}
                     editable={!showDatePicker}
                     onFocus={this.handleDatePress}/>
+                    <DateTimePicker />
 
                 </View>
                 <TouchableHighlight
