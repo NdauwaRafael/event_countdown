@@ -94,7 +94,7 @@ class EventForm extends Component {
             <View style={{flex: 1}}>
                 <View style={styles.fieldContainer}>
                     <TextInput
-                        style={styles.tetx}
+                        style={styles.text}
                         placeholder="Event Title"
                         value={event_title}
                         onChangeText={this.handleChangeTitle}
