@@ -32,6 +32,10 @@ class EventForm extends Component {
 
     handleAddPress() {
         this.props.navigation.goBack()
+    };
+
+    handleChangeTitle(){
+        
     }
 
     render() {
@@ -43,6 +47,7 @@ class EventForm extends Component {
                         style={styles.tetx}
                         placeholder="Event Title"
                         value={event_title}
+                        onChangeText={this.handleChangeTitle}
                         spellCheck={false}/>
                 </View>
                 <TouchableHighlight
