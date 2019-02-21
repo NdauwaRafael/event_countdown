@@ -18,9 +18,10 @@ const styles = StyleSheet.create({
         margin: 0,
         marginRight: 7,
         paddingLeft: 10,
-        
+
     }
 });
+
 class EventForm extends Component {
     static navigationOptions = {
         title: 'Add Event',
@@ -34,7 +35,10 @@ class EventForm extends Component {
         return (
             <View style={{flex: 1}}>
                 <View style={styles.fieldContainer}>
-                    <TextInput style={styles.tetx}/>
+                    <TextInput
+                        style={styles.tetx}
+                        placeholder="Event Title"
+                        spellCheck={false}/>
                 </View>
                 <TouchableHighlight
                     onPress={this.handleAddPress.bind(this)}>
