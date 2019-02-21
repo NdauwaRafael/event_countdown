@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
 });
 
 class EventForm extends Component {
-
+    state = {
+        event_title: ''
+    }
     static navigationOptions = {
         title: 'Add Event',
     };
@@ -34,7 +36,7 @@ class EventForm extends Component {
 
     handleChangeTitle(value) {
         this.setState({
-            title: value
+            event_title: value
         })
     }
 
