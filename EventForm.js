@@ -7,6 +7,9 @@ import {
     TouchableHighlight
 } from 'react-native';
 
+const styles = StyleSheet.create({
+
+});
 class EventForm extends Component {
     static navigationOptions = {
         title: 'Add Event',
