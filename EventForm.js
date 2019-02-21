@@ -23,9 +23,7 @@ const styles = StyleSheet.create({
 });
 
 class EventForm extends Component {
-    state = {
-            event_title: ''
-    }
+
     static navigationOptions = {
         title: 'Add Event',
     };
@@ -34,8 +32,10 @@ class EventForm extends Component {
         this.props.navigation.goBack()
     };
 
-    handleChangeTitle(){
-        
+    handleChangeTitle(value) {
+        this.setState({
+            title: value
+        })
     }
 
     render() {
@@ -51,7 +51,7 @@ class EventForm extends Component {
                         spellCheck={false}/>
                 </View>
                 <TouchableHighlight
-                    onPress={this.handleAddPress.bind(this)}>
+                    onPress={this.handleAddPress}>
                     <Text>Add</Text>
                 </TouchableHighlight>
             </View>
