@@ -54,6 +54,8 @@ class EventForm extends Component {
         this.handleAddPress = this.handleAddPress.bind(this);
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleDatePress = this.handleDatePress.bind(this);
+        this.handleDatePicked = this.handleDatePicked.bind(this);
+        this.handleDatePickerHide = this.handleDatePickerHide.bind(this);
     }
 
     static navigationOptions = {
@@ -74,7 +76,12 @@ class EventForm extends Component {
             showDatePicker: true
         })
     }
-
+    handleDatePicked(){}
+    handleDatePickerHide(){
+        this.setState({
+            showDatePicker: false
+        })
+    }
     render() {
         const {event_title, event_date, showDatePicker} = this.state;
         return (
@@ -96,7 +103,9 @@ class EventForm extends Component {
                     onFocus={this.handleDatePress}/>
                     <DateTimePicker
                     isVisible={showDatePicker}
-                    />
+                    mode="datetime"
+                    onConfirm={this.handleDatePicked}
+                    onCancel={this.handleDatePickerHide}/>
 
                 </View>
                 <TouchableHighlight
