@@ -43,7 +43,10 @@ class EventList extends Component {
             getEvents()
         }, 1000)
 
-        const events = getEvents()
+        const events = require('./db.json').events.map(e => ({
+            ...e,
+            date: new Date(e.date)
+        }));
         this.setState({events});
     };
 
