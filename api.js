@@ -1,6 +1,8 @@
 import moment from 'moment';
-
-const evnts_url = 'http://localhost:3004/events';
+import Expo from 'expo';
+const {manifest} = Expo.Constants;
+const api = (typeof manifest.packagerOpts === `object`) && manifest.packagerOpts.dev ? manifest.debuggerHost.split(':').shift().concat(':3004') : 'production.com';
+const evnts_url = `http://${api}/events`;
 
 export function getEvents() {
     return fetch(evnts_url)
