@@ -1,5 +1,11 @@
 import moment from 'moment';
-const url = 'http://localhost:3004';
+
+const evnts_url = 'http://localhost:3004/events';
+
+export function getEvents() {
+    return fetch(evnts_url)
+        .then(response => response.json());
+}
 export function formatDateTime(dateString) {
     const parsed = moment(new Date(dateString));
     if (!parsed.isValid()) {
