@@ -2,8 +2,8 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start &  json-server --watch db.json --port 3004",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo start --android &  json-server --watch db.json --port 3004",
+    "ios": "expo start --ios &  json-server --watch db.json --port 3004",
     "eject": "expo eject"
   },
   "dependencies": {
