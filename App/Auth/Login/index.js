@@ -13,13 +13,16 @@ export default class Login extends Component {
             email: '',
             password: ''
         }
+
+        this.signUp = this.signUp.bind(this);
+        this.login = this.login.bind(this);
     }
 
-    signUp(email, password) {
+    signUp() {
 
     };
 
-    login(email, password) {
+    login() {
 
     }
 
@@ -47,7 +50,7 @@ export default class Login extends Component {
                         full
                         rounded
                         success
-                        onPress={this.login}>
+                        onPress={()=>this.login}>
                         <Text style={{color: '#fff'}}>Login</Text>
                     </Button>
 
@@ -56,7 +59,7 @@ export default class Login extends Component {
                         full
                         rounded
                         info
-                        onPress={this.signUp}>
+                        onPress={()=>this.signUp}>
                         <Text style={{color: '#fff'}}>Sign Up!</Text>
                     </Button>
                 </Form>
