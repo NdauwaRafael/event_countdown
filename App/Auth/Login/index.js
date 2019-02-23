@@ -12,7 +12,7 @@ export default class Login extends Component {
         this.state = {
             email: '',
             password: ''
-        }
+        };
 
         this.signUp = this.signUp.bind(this);
         this.login = this.login.bind(this);
@@ -24,7 +24,8 @@ export default class Login extends Component {
 
     login() {
 
-    }
+    };
+
 
     render() {
         return (
@@ -33,6 +34,7 @@ export default class Login extends Component {
                     <Item floatingLabel>
                         <Label>Email</Label>
                         <Input
+                            onChangeText={(email)=>this.setState({email})}
                             autoCorrect={false}
                             autoCapitalize="none"/>
                     </Item>
@@ -40,6 +42,7 @@ export default class Login extends Component {
                     <Item floatingLabel>
                         <Label>Password</Label>
                         <Input
+                            onChangeText={(password)=>this.setState({password})}
                             secureTextEntry={true}
                             autoCorrect={false}
                             autoCapitalize="none"/>
