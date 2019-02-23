@@ -5,7 +5,7 @@ import {
     StyleSheet
 } from 'react-native';
 import PropTypes from 'prop-types';
-import {formatDate, getCountdownParts} from './api';
+import {formatDate, getCountdownParts} from '../Utils/api';
 
 const styles = StyleSheet.create({
     card: {

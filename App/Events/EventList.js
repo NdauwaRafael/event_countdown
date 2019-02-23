@@ -3,7 +3,7 @@ import {StyleSheet, FlatList, Text} from 'react-native';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import EventCard from './EventCard';
-import {getEvents} from './api'
+import {getEvents} from '../Utils/api'
 
 
 const styles = StyleSheet.create({
@@ -43,7 +43,7 @@ class EventList extends Component {
             getEvents()
         }, 1000)
 
-        const events = require('./db.json').events.map(e => ({
+        const events = require('../../db.json').events.map(e => ({
             ...e,
             date: new Date(e.date)
         }));

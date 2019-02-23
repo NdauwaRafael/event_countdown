@@ -1,14 +1,5 @@
 import moment from 'moment';
-import * as Firebase from 'firebase';
-const firebaseConfig = {
-    apiKey: "AIzaSyCC1RFh6S-aSv76q-LmENomFXEHjVQmvdo",
-    authDomain: "events-countdown-7ff5f.firebaseapp.com",
-    databaseURL: "https://events-countdown-7ff5f.firebaseio.com",
-    projectId: "events-countdown-7ff5f",
-    storageBucket: "events-countdown-7ff5f.appspot.com",
-};
-Firebase.initializeApp(firebaseConfig);
-
+require('./Config/Firebase')
 export function formatDateTime(dateString) {
     const parsed = moment(new Date(dateString));
     if (!parsed.isValid()) {
