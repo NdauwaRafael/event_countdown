@@ -7,4 +7,4 @@ npm-debug.*
 *.mobileprovision
 .idea/*
 .idea/workspace.xml
-App/Utils/Config/Firebase/index.js
+/App/Utils/Config/Firebase/index.js
