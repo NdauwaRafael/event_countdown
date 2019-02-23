@@ -1,4 +1,5 @@
 {
+  "name": "event_countdown",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start ",
@@ -7,18 +8,22 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "@expo/vector-icons": "^9.0.0",
     "expo": "^32.0.0",
+    "firebase": "^5.8.4",
     "moment": "^2.24.0",
     "native-base": "^2.12.0",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react": "^16.6.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.1.tar.gz",
     "react-native-action-button": "^2.8.5",
     "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-vector-icons": "^6.3.0",
     "react-navigation": "^3.3.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "schedule": "^0.4.0"
   },
   "private": true
 }
