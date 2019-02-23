@@ -9,7 +9,7 @@ export default class Register extends Component {
         return (
             <Container style={styles.container}>
                 <Form>
-                    <Item>
+                    <Item floatingLabel>
                         <Label>Email</Label>
                         <Input
                         autoCorrect={false}
