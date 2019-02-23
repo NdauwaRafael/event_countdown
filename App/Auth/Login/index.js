@@ -7,13 +7,22 @@ import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
 
 export default class Login extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             email: '',
             password: ''
         }
     }
+
+    signUp(email, password) {
+
+    };
+
+    login(email, password) {
+        
+    }
+
     render() {
         return (
             <Container style={styles.container}>
