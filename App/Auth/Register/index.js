@@ -10,7 +10,9 @@ export default class Register extends Component {
                 <Form>
                     <Item>
                         <Label>Email</Label>
-                        <Input/>
+                        <Input
+                        autoCorrect={false}
+                        autoCapitalize="none"/>
                     </Item>
                 </Form>
             </Container>
