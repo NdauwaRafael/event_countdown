@@ -33,6 +33,14 @@ export default class Login extends Component {
                         success>
                         <Text style={{color: '#fff'}}>Login</Text>
                     </Button>
+
+                    <Button
+                        style={{marginTop: 15}}
+                        full
+                        rounded
+                        primary>
+                        <Text style={{color: '#fff'}}>Sign Up!</Text>
+                    </Button>
                 </Form>
             </Container>
         );

@@ -25,6 +25,14 @@ export default class Register extends Component {
                             autoCapitalize="none"/>
                     </Item>
 
+                    <Item floatingLabel>
+                        <Label>Confirm Password</Label>
+                        <Input
+                            secureTextEntry={true}
+                            autoCorrect={false}
+                            autoCapitalize="none"/>
+                    </Item>
+
                     <Button
                         style={{marginTop: 15}}
                         full
