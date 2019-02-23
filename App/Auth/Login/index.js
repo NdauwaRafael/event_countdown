@@ -20,7 +20,7 @@ export default class Login extends Component {
     };
 
     login(email, password) {
-        
+
     }
 
     render() {
@@ -46,7 +46,8 @@ export default class Login extends Component {
                         style={{marginTop: 15}}
                         full
                         rounded
-                        success>
+                        success
+                        onPress={this.login}>
                         <Text style={{color: '#fff'}}>Login</Text>
                     </Button>
 
@@ -54,7 +55,8 @@ export default class Login extends Component {
                         style={{marginTop: 15}}
                         full
                         rounded
-                        info>
+                        info
+                        onPress={this.signUp}>
                         <Text style={{color: '#fff'}}>Sign Up!</Text>
                     </Button>
                 </Form>
