@@ -1,5 +1,28 @@
 import moment from 'moment';
+
 require('./Config/Firebase')
+
+export function loginUser(email, password) {
+    try {
+
+    }
+    catch (error) {
+        console.log(error.toString())
+    }
+}
+
+export function signUpUser(email, password) {
+    try {
+        if (password.length < 6) {
+            console.log('please enter password longer than 6 characters');
+        }
+        Firebase.auth().createUserWithEmailAndPassword(email, password);
+    }
+    catch (error) {
+        console.log(error.toString());
+        return false;
+    }
+}
 export function formatDateTime(dateString) {
     const parsed = moment(new Date(dateString));
     if (!parsed.isValid()) {
