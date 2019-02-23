@@ -5,7 +5,9 @@ const firebaseConfig = {
     authDomain: "",
     databaseURL: "",
     storageBucket: ""
-}
+};
+Firebase.initializeApp(firebaseConfig);
+
 export function formatDateTime(dateString) {
     const parsed = moment(new Date(dateString));
     if (!parsed.isValid()) {
