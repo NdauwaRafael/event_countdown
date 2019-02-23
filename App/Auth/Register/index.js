@@ -26,10 +26,11 @@ export default class Register extends Component {
                     </Item>
 
                     <Button
+                        style={{marginTop: 15}}
                         full
                         rounded
                         success>
-                        <Text>Login</Text>
+                        <Text style={{color: '#fff'}}>Login</Text>
                     </Button>
                 </Form>
             </Container>
@@ -39,6 +40,7 @@ export default class Register extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        padding: 10,
         flex: 1,
         backgroundColor: "#fff",
         justifyContent: "center"
