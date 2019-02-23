@@ -9,6 +9,10 @@ import {Container, Content, Header, Form, Input, Item, Button, Label} from 'nati
 export default class Login extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            email: '',
+            password: ''
+        }
     }
     render() {
         return (
