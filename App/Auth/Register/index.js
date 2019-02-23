@@ -7,7 +7,7 @@ import {Container, Content, Header, Form, Input, Item , Button, Label} from 'nat
 export default class Register extends Component {
     render() {
         return (
-            <Container>
+            <Container style={styles.container}>
                 <Form>
                     <Item>
                         <Label>Email</Label>
