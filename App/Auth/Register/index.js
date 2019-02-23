@@ -2,7 +2,7 @@
  * Created by Raphael Karanja on 2019-02-23.
  */
 import React, {Component} from 'react';
-import {StyleSheet} from 'react-native'
+import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
 
 export default class Register extends Component {
@@ -24,6 +24,13 @@ export default class Register extends Component {
                             autoCorrect={false}
                             autoCapitalize="none"/>
                     </Item>
+
+                    <Button
+                        full
+                        rounded
+                        success>
+                        <Text>Login</Text>
+                    </Button>
                 </Form>
             </Container>
         );
