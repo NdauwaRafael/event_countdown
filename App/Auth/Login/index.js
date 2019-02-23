@@ -38,7 +38,7 @@ export default class Login extends Component {
                         style={{marginTop: 15}}
                         full
                         rounded
-                        primary>
+                        info>
                         <Text style={{color: '#fff'}}>Sign Up!</Text>
                     </Button>
                 </Form>
