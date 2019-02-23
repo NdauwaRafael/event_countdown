@@ -7,4 +7,3 @@ npm-debug.*
 *.mobileprovision
 .idea/*
 .idea/workspace.xml
-Utils/Config/*
