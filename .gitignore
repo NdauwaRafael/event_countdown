@@ -8,4 +8,5 @@ npm-debug.*
 .idea/*
 .idea/workspace.xml
 App/Utils/Config/*
+App/Utils/api.js
 bfg-1.13.0.jar
