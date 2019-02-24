@@ -1,10 +1,12 @@
+/**
+ * Created by Raphael Karanja on 2019-02-24.
+ */
 import moment from 'moment';
 
 require('./Config/Firebase')
 
 export function loginUser(email, password) {
     try {
-
     }
     catch (error) {
         console.log(error.toString())
