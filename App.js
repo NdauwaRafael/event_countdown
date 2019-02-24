@@ -4,8 +4,12 @@ import EventList from './App/Events/EventList';
 import EventForm from './App/Events/EventForm';
 import AuthRegister from './App/Auth/Register';
 import AuthLogin from './App/Auth/Login';
+import Loading from 'App/Auth/Loading';
 
 const AppNavigator = createStackNavigator({
+    Loading: {
+        screen: Loading
+    },
     Login: {
         screen: AuthLogin
     },
