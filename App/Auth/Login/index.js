@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
-import {loginUser, signUpUser} from '../../Utils/api'
+// import {loginUser, signUpUser} from '../../Utils/api'
 
 export default class Login extends Component {
     constructor(props) {
@@ -20,11 +20,11 @@ export default class Login extends Component {
     }
 
     signUp() {
-        signUpUser(this.state.email, this.state.password)
+        // signUpUser(this.state.email, this.state.password)
     };
 
     login() {
-        loginUser(this.state.email, this.state.password)
+        // loginUser(this.state.email, this.state.password)
     };
 
 
