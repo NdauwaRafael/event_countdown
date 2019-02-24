@@ -1,5 +1,28 @@
-rootProject.name = 'event_countdown'
+rootProject.name = 'eventCountdown'
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
 
 include ':app'
+def modulesDir = new File(rootDir, "../node_modules")
+ def includeUniversalModule = { name ->
+  include ":$name"
+  project(":$name").projectDir = new File(modulesDir, "$name/android")
+}
+ [
+    'expo-core',
+    'expo-firebase-app',
+    'expo-firebase-analytics',
+    'expo-firebase-auth',
+    'expo-firebase-crashlytics',
+    'expo-firebase-database',
+    'expo-firebase-firestore',
+    'expo-firebase-functions',
+    'expo-firebase-instance-id',
+    'expo-firebase-invites',
+    'expo-firebase-links',
+    'expo-firebase-messaging',
+    'expo-firebase-notifications',
+    'expo-firebase-performance',
+    'expo-firebase-remote-config',
+    'expo-firebase-storage'  ,
+].forEach({ moduleName -> includeUniversalModule(moduleName) })

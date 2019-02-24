@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.event_countdown">
+  package="com.eventCountdown">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
@@ -23,5 +23,32 @@
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
+
+
+    <!-- FCM -->
+    <service
+            android:name="expo.modules.firebase.messaging.EXFirebaseMessagingService">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+        </intent-filter>
+    </service>
+    <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/shell_notification_icon" />
+    <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+    <service
+            android:name=".fcm.FcmRegistrationIntentService"
+            android:exported="false">
+    </service>
+    <!-- Expo Firebase Instance ID -->
+    <service android:name="expo.modules.firebase.messaging.EXFirebaseInstanceIdService">
+        <intent-filter>
+            <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+        </intent-filter>
+    </service>
+    <!-- Expo Firebase Background Messages -->
+    <service android:name="expo.modules.firebase.messaging.FirebaseBackgroundMessagingService" />
 
 </manifest>

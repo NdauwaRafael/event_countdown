@@ -1388,7 +1388,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.eventCountdown;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.event-countdown";
 				PRODUCT_NAME = event_countdown;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1410,7 +1410,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.eventCountdown;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.event-countdown";
 				PRODUCT_NAME = event_countdown;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
