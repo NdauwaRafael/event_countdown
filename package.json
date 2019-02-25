@@ -27,6 +27,7 @@
     "expo-firebase-performance": "^2.0.0",
     "expo-firebase-remote-config": "^2.0.0",
     "expo-firebase-storage": "^2.0.0",
+    "expo-react-native-adapter": "^2.1.0-alpha.0",
     "firebase": "^5.8.4",
     "moment": "^2.24.0",
     "native-base": "^2.12.0",
