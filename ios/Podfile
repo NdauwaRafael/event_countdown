@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
   source 'https://github.com/CocoaPods/Specs.git'
-  platform :ios, '10.2'
+  platform :ios, '10.0'
 
 target 'event_countdown' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -39,38 +39,8 @@ target 'event_countdown' do
           :path => '../node_modules/expo-firebase-remote-config/ios'
         pod 'EXFirebaseStorage',
           :path => '../node_modules/expo-firebase-storage/ios'
-
-pod 'ExpoKit',
-    :git => "http://github.com/expo/expo.git",
-    :tag => "ios/2.8.2",
-    :subspecs => [
-      "Core"
-    ],
-    :inhibit_warnings => true
-
-  # Universal modules added in SDK29
   pod 'EXCore',
     :path => "../node_modules/expo-core/ios",
     :inhibit_warnings => true
-  pod 'EXReactNativeAdapter',
-    :path => "../node_modules/expo-react-native-adapter/ios",
-    :inhibit_warnings => true
-  pod 'EXFont',
-    :path => "../node_modules/expo-font/ios"
-  pod 'EXFontInterface',
-    :path => "../node_modules/expo-font-interface/ios"
-  pod 'yoga',
-    :path => "../node_modules/react-native/ReactCommon/yoga",
-    :inhibit_warnings => true
-  pod 'DoubleConversion',
-    :podspec => "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec",
-    :inhibit_warnings => true
-  pod 'Folly',
-    :podspec => "../node_modules/react-native/third-party-podspecs/Folly.podspec",
-    :inhibit_warnings => true
-  pod 'glog',
-    :podspec => "../node_modules/react-native/third-party-podspecs/glog.podspec",
-    :inhibit_warnings => true
 
-
-  end
+ end
