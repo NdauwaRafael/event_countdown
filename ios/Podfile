@@ -55,7 +55,10 @@ pod 'ExpoKit',
   pod 'EXReactNativeAdapter',
     :path => "../node_modules/expo-react-native-adapter/ios",
     :inhibit_warnings => true
-
+  pod 'EXFont',
+    :path => "../node_modules/expo-font/ios"
+  pod 'EXFontInterface',
+    :path => "../node_modules/expo-font-interface/ios"
   pod 'yoga',
     :path => "../node_modules/react-native/ReactCommon/yoga",
     :inhibit_warnings => true
