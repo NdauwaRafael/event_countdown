@@ -11,5 +11,5 @@ App/Utils/Config/*
 App/Utils/api.js
 bfg-1.13.0.jar
 google-services.json
-FireBasekeys.js
+FirebaseKeys.js
 FireBaseConfig.js
