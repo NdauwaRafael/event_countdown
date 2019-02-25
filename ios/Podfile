@@ -14,10 +14,7 @@ target 'event_countdown' do
         "Core"
       ],
       :inhibit_warnings => true
-      
-    pod 'EXCore',
-      :path => "../node_modules/expo/node_modules/expo-core/ios",
-      :inhibit_warnings => true
+
   # Bacon: Start Custom Modules (Firebase)
        pod 'EXFirebaseApp',
           :path => '../node_modules/expo-firebase-app/ios'
