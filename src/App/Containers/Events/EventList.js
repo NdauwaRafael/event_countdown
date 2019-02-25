@@ -41,7 +41,7 @@ class EventList extends Component {
             })
         }, 1000)
 
-        const events = require('../../../db.json').events.map(e => ({
+        const events = require('../../../../db.json').events.map(e => ({
             ...e,
             date: new Date(e.date)
         }));
