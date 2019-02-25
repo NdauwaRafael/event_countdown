@@ -1,5 +1,5 @@
 {
-  "name": "eventCountdown",
+  "name": "event_countdown",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start ",
@@ -11,6 +11,7 @@
     "@babel/runtime": "^7.0.0",
     "@expo/vector-icons": "^9.0.0",
     "expo": "^32.0.0",
+    "expo-core": "^2.0.1",
     "expo-firebase-analytics": "^2.0.0",
     "expo-firebase-app": "^2.0.0",
     "expo-firebase-auth": "^2.0.0",
