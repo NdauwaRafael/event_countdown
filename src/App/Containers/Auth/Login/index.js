@@ -19,6 +19,12 @@ class Login extends Component {
         this.login = this.login.bind(this);
     }
 
+    componentWillUpdate(nextProps) {
+        if (nextProps.auth) {
+            this.props.navigation.goBack()
+        }
+    }
+
     signUp() {
         // signUpUser(this.state.email, this.state.password)
     };
