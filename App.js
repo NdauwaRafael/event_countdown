@@ -4,7 +4,12 @@ import EventList from './src/App/Containers/Events/EventList';
 import EventForm from './src/App/Containers/Events/EventForm';
 import AuthRegister from './src/App/Containers/Auth/Register';
 import AuthLogin from './src/App/Containers/Auth/Login';
-import Loading from 'src/App/Containers/Auth/Loading';
+import Loading from './src/App/Containers/Auth/Loading';
+import configureStore from './src/CountdownEventsStore';
+import {loginUser} from './src/CountdownEventsStore/actions/Login'
+import {Provider} from 'react-redux';
+const store = configureStore();
+store.dispatch(loginUser);
 
 const AppNavigator = createStackNavigator({
     Loading: {
@@ -23,6 +28,22 @@ const AppNavigator = createStackNavigator({
         screen: EventForm
     }
 });
-export default createAppContainer(AppNavigator);
+// const AppComponent = createAppContainer(AppNavigator);
+
+class AppWithNavigationState extends Component {
+    render() {
+        return (
+            <AppNavigator />
+        )
+    }
+}
+
+export default function App() {
+    return (
+        <Provider store={store}>
+            <AppWithNavigationState />
+        </Provider>
+    );
+}
 
 
