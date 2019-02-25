@@ -5,9 +5,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
-// import {loginUser, signUpUser} from '../../Utils/api'
+import { connect } from "react-redux";
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -79,4 +79,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         justifyContent: "center"
     }
-})
+});
+
+function mapStateToProps({ auth }) {
+    return { auth };
+}
+
+export default connect(mapStateToProps)(Login);
+
