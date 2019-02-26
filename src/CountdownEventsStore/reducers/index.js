@@ -2,8 +2,8 @@
  * Created by Raphael Karanja on 2019-02-25.
  */
 import {combineReducers} from 'redux';
-import UserReducer from './Login'
+import auth from './Login'
 const rootReducer = combineReducers({
-    UserReducer
+    auth
 });
 export default rootReducer;

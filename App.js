@@ -1,5 +1,5 @@
-import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import React, {Component} from 'react';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 import EventList from './src/App/Containers/Events/EventList';
 import EventForm from './src/App/Containers/Events/EventForm';
 import AuthRegister from './src/App/Containers/Auth/Register';
@@ -8,6 +8,7 @@ import Loading from './src/App/Containers/Auth/Loading';
 import configureStore from './src/CountdownEventsStore';
 import {loginUser} from './src/CountdownEventsStore/actions/Login'
 import {Provider} from 'react-redux';
+
 const store = configureStore();
 store.dispatch(loginUser);
 
@@ -28,22 +29,18 @@ const AppNavigator = createStackNavigator({
         screen: EventForm
     }
 });
-// const AppComponent = createAppContainer(AppNavigator);
+const AppComponent = createAppContainer(AppNavigator);
 
-class AppWithNavigationState extends Component {
+export default class App extends React.Component {
     render() {
         return (
-            <AppNavigator />
-        )
+            <Provider store={store}>
+                <AppComponent/>
+            </Provider>
+        );
     }
 }
 
-export default function App() {
-    return (
-        <Provider store={store}>
-            <AppWithNavigationState />
-        </Provider>
-    );
-}
+
 
 

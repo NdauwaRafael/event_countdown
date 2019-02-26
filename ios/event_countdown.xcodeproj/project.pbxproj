@@ -45,7 +45,6 @@
 		452685443A7945A7B1DFD79D /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A367B555C0EC47E3AC30B876 /* SimpleLineIcons.ttf */; };
 		4E6BC5CDC735497BA0B8180F /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06469B565C8B41E3946AE54B /* Foundation.ttf */; };
 		5AF0179BD5C747568F407E55 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA20B837B6F47E2AA628021 /* Roboto.ttf */; };
-		80B274462222C04300DBC45A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80B274452222C04300DBC45A /* GoogleService-Info.plist */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8433F227ABD547EC977DBB6D /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0203D423D1DE46728E0A4758 /* Octicons.ttf */; };
 		9839A700C1174AC4B9B2AFFD /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6DB03F47AA64B99A103C448 /* Entypo.ttf */; };
@@ -391,7 +390,6 @@
 		61BD4C7342FE57677CDCF6AD /* Pods-event_countdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-event_countdown.release.xcconfig"; path = "Pods/Target Support Files/Pods-event_countdown/Pods-event_countdown.release.xcconfig"; sourceTree = "<group>"; };
 		6735B334A24443AE8EDBAE44 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		80B274452222C04300DBC45A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		82411BEBDBD440F3927F6C59 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		92BA416983A241F4B21CE214 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
@@ -551,7 +549,6 @@
 		13B07FAE1A68108700A75B9A /* event_countdown */ = {
 			isa = PBXGroup;
 			children = (
-				80B274452222C04300DBC45A /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -1217,7 +1214,6 @@
 				0394409A542D4FE399259A00 /* rubicon-icon-font.ttf in Resources */,
 				452685443A7945A7B1DFD79D /* SimpleLineIcons.ttf in Resources */,
 				0AB5A123991E4B038C5B5F1A /* Zocial.ttf in Resources */,
-				80B274462222C04300DBC45A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

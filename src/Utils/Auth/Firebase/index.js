@@ -1,11 +1,10 @@
 /**
  * Created by Raphael Karanja on 2019-02-25.
  */
-// import * as firebase from "firebase";
-//
-// import { FirebaseConfig } from "../FireBaseConfig.js";
-// firebase.initializeApp(FirebaseConfig);
-import firebase from 'expo-firebase-app';
+import * as firebase from "firebase";
+
+import { FirebaseConfig } from "../FireBaseConfig.js";
+firebase.initializeApp(FirebaseConfig);
 
 const databaseRef = firebase.database().ref();
 export const eventsRef = databaseRef.child("events");
