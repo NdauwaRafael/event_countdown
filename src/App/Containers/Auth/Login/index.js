@@ -26,13 +26,12 @@ class Login extends Component {
     }
 
     signUp() {
-        // signUpUser(this.state.email, this.state.password)
+        this.props.navigation.navigate('Register');
     };
 
     login() {
         // loginUser(this.state.email, this.state.password)
     };
-
 
     render() {
         return (
@@ -69,7 +68,7 @@ class Login extends Component {
                         full
                         rounded
                         info
-                        onPress={()=>this.signUp}>
+                        onPress={()=>this.signUp()}>
                         <Text style={{color: '#fff'}}>Sign Up!</Text>
                     </Button>
                 </Form>

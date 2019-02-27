@@ -3,8 +3,8 @@
  */
 import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
-import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
-import { connect } from "react-redux";
+import { Container, Content, Header, Form, Input, Item, Button, Label, Left, Right, Body, Title, Icon} from 'native-base';
+import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from '../../../../CountdownEventsStore/actions/SignUp'
 
@@ -18,16 +18,17 @@ class Register extends Component {
 
         this.signUp = this.signUp.bind(this);
     }
+
     signUp() {
         let user = {
             email: this.state.email,
             password: this.state.password
         };
         this.props.actions.createUser(user)
-            .then(user=>{
+            .then(user => {
                 this.props.navigation.navigate(Loading);
             })
-            .catch(error=>{
+            .catch(error => {
 
             })
     };
@@ -35,6 +36,17 @@ class Register extends Component {
     render() {
         return (
             <Container style={styles.container}>
+                <Header>
+                    <Left>
+                        <Button transparent>
+                            <Icon name='arrow-back' />
+                        </Button>
+                    </Left>
+                    <Body>
+                    <Title>Register User</Title>
+                    </Body>
+                    <Right/>
+                </Header>
                 <Form>
                     <Item floatingLabel>
                         <Label>Email</Label>
@@ -64,7 +76,7 @@ class Register extends Component {
                         full
                         rounded
                         success>
-                        <Text style={{color: '#fff'}}>Login</Text>
+                        <Text style={{color: '#fff'}}>Register</Text>
                     </Button>
                 </Form>
             </Container>
@@ -82,9 +94,10 @@ const styles = StyleSheet.create({
     }
 });
 
-function mapStateToProps({ auth }) {
-    return { auth };
+function mapStateToProps({auth}) {
+    return {auth};
 }
+
 const mapDispatchToProps = (dispatch) => {
     return {
         actions: bindActionCreators(authActions, dispatch)
