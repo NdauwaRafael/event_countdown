@@ -2,8 +2,8 @@
  * Created by Raphael Karanja on 2019-02-23.
  */
 import React, {Component} from 'react';
-import {StyleSheet, Text} from 'react-native'
-import {Container, Content, Form, Input, Item, Button, Label, Left, Right, Body, Title, Icon} from 'native-base';
+import {StyleSheet} from 'react-native'
+import {Container, Content, Form, Input, Item, Button, Label, Text, View} from 'native-base';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from '../../../../CountdownEventsStore/actions/SignUp'
@@ -15,7 +15,11 @@ class Register extends Component {
             email: '',
             password: '',
             confirmPassword: '',
-            errors: {}
+            errors: {
+                email: '',
+                password: '',
+                confirmPassword: '',
+            }
         };
 
         this.signUp = this.signUp.bind(this);
@@ -62,6 +66,9 @@ class Register extends Component {
     }
 
     signUp() {
+        if (!this.userIsValid()) {
+            return;
+        }
         let user = {
             email: this.state.email,
             password: this.state.password
@@ -73,31 +80,44 @@ class Register extends Component {
     };
 
     render() {
+        let {errors} = this.state;
         return (
             <Container style={styles.container}>
                 <Form>
-                    <Item floatingLabel>
-                        <Label>Email</Label>
-                        <Input
-                            autoCorrect={false}
-                            autoCapitalize="none"/>
-                    </Item>
+                    <View>
+                        <Item floatingLabel error={errors.email.length > 0}>
+                            <Label>Email</Label>
+                            <Input
+                                autoCorrect={false}
+                                autoCapitalize="none"/>
+                        </Item>
 
-                    <Item floatingLabel>
-                        <Label>Password</Label>
-                        <Input
-                            secureTextEntry={true}
-                            autoCorrect={false}
-                            autoCapitalize="none"/>
-                    </Item>
+                        <Text style={styles.errorMessage}>{errors.email}</Text>
 
-                    <Item floatingLabel>
-                        <Label>Confirm Password</Label>
-                        <Input
-                            secureTextEntry={true}
-                            autoCorrect={false}
-                            autoCapitalize="none"/>
-                    </Item>
+                    </View>
+
+                    <View>
+                        <Item floatingLabel error={errors.password.length > 0}>
+                            <Label>Password</Label>
+                            <Input
+                                secureTextEntry={true}
+                                autoCorrect={false}
+                                autoCapitalize="none"/>
+                        </Item>
+                        <Text style={styles.errorMessage}>{errors.password}</Text>
+                    </View>
+
+                    <View>
+                        <Item floatingLabel error={errors.confirmPassword.length > 0}>
+                            <Label>Confirm Password</Label>
+                            <Input
+
+                                secureTextEntry={true}
+                                autoCorrect={false}
+                                autoCapitalize="none"/>
+                        </Item>
+                        <Text style={styles.errorMessage}>{errors.confirmPassword}</Text>
+                    </View>
 
                     <Button
                         onPress={() => this.signUp()}
@@ -119,7 +139,10 @@ const styles = StyleSheet.create({
         padding: 10,
         flex: 1,
         backgroundColor: "#fff",
-
+    },
+    errorMessage: {
+        fontSize: 10,
+        color: 'red'
     }
 });
 
