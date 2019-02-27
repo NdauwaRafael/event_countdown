@@ -4,20 +4,7 @@
 import {authRef, provider } from "../../../Utils/Auth/Firebase";
 import {CREATE_USER_SUCCESS, CREATE_USER_FAIL,  LOGIN_USER_SUCCESS, LOGIN_USER_FAILED } from "../../constants/ActionTypes";
 
-export const createUserSuccess = (resp) => {
-    return {
-        type: CREATE_USER_SUCCESS,
-        user: resp,
-    }
-};
 
-
-export const createUserFail = (error) => {
-    return {
-        type: CREATE_USER_FAIL,
-        error
-    }
-}
 export const loginUserSuccess = (resp) => {
     return {
         type: LOGIN_USER_SUCCESS,
