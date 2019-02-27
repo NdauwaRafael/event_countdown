@@ -6,6 +6,19 @@ import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
 
 export default class Register extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: ''
+        };
+
+        this.signUp = this.signUp.bind(this);
+    }
+    signUp() {
+
+    };
+
     render() {
         return (
             <Container style={styles.container}>
