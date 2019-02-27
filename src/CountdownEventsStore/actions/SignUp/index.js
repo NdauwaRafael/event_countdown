@@ -18,7 +18,11 @@ export const createUserFail = (error) => {
     }
 };
 
-export const createUser = ()=>dispatch=>{
-    
+export const createUser = ({email, password})=>dispatch=>{
+    authRef.createUserWithEmailAndPassword(email, password)
+        .then((resp) => {
+            return dispatch(createUserSuccess(resp));
+        })
+        .catch((error) => disptach(createUserFail(error)));
 }
 
