@@ -84,7 +84,7 @@ class Register extends Component {
         return (
             <Container style={styles.container}>
                 <Form>
-                    <View>
+                    <View style={styles.formElement}>
                         <Item floatingLabel error={errors.email.length > 0}>
                             <Label>Email</Label>
                             <Input
@@ -97,7 +97,7 @@ class Register extends Component {
 
                     </View>
 
-                    <View>
+                    <View style={styles.formElement}>
                         <Item floatingLabel error={errors.password.length > 0}>
                             <Label>Password</Label>
                             <Input
@@ -109,7 +109,7 @@ class Register extends Component {
                         <Text style={styles.errorMessage}>{errors.password}</Text>
                     </View>
 
-                    <View>
+                    <View style={styles.formElement}>
                         <Item floatingLabel error={errors.confirmPassword.length > 0}>
                             <Label>Confirm Password</Label>
                             <Input
@@ -145,6 +145,9 @@ const styles = StyleSheet.create({
     errorMessage: {
         fontSize: 10,
         color: 'red'
+    },
+    formElement: {
+        marginTop: 15,
     }
 });
 
