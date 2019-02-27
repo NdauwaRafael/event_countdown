@@ -36,17 +36,7 @@ class Register extends Component {
     render() {
         return (
             <Container style={styles.container}>
-                <Header>
-                    <Left>
-                        <Button transparent>
-                            <Icon name='arrow-back' />
-                        </Button>
-                    </Left>
-                    <Body>
-                    <Title>Register User</Title>
-                    </Body>
-                    <Right/>
-                </Header>
+
                 <Form>
                     <Item floatingLabel>
                         <Label>Email</Label>
@@ -90,7 +80,7 @@ const styles = StyleSheet.create({
         padding: 10,
         flex: 1,
         backgroundColor: "#fff",
-        justifyContent: "center"
+        
     }
 });
 
