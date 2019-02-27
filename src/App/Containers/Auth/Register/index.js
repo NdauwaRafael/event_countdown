@@ -4,8 +4,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
+import { connect } from "react-redux";
 
-export default class Register extends Component {
+class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -59,6 +60,7 @@ export default class Register extends Component {
     }
 }
 
+
 const styles = StyleSheet.create({
     container: {
         padding: 10,
@@ -66,4 +68,10 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         justifyContent: "center"
     }
-})
+});
+
+function mapStateToProps({ auth }) {
+    return { auth };
+}
+
+export default connect(mapStateToProps)(Register);
