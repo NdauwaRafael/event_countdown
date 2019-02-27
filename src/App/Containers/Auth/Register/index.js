@@ -19,7 +19,17 @@ class Register extends Component {
         this.signUp = this.signUp.bind(this);
     }
     signUp() {
+        let user = {
+            email: this.state.email,
+            password: this.state.password
+        };
+        this.props.actions.createUser(user)
+            .then(user=>{
+                this.props.navigation.navigate(Loading);
+            })
+            .catch(error=>{
 
+            })
     };
 
     render() {
