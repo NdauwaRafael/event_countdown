@@ -12,8 +12,8 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: 'raphynje@gmail.com',
-            password: 'pass123',
+            email: '',
+            password: '',
             confirmPassword: '',
             errors: {}
         };
@@ -55,6 +55,10 @@ class Register extends Component {
         } else {
             errors.email = ''
         }
+
+        this.setState({errors});
+
+        return isValid;
     }
 
     signUp() {
