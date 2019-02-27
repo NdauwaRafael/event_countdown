@@ -9,7 +9,8 @@ export const createUserSuccess = (resp) => {
         type: CREATE_USER_SUCCESS,
         user: resp,
     }
-}
+};
+
 
 export const createUserFail = (error) => {
     return {
@@ -38,6 +39,16 @@ export const loginUser = () => dispatch => {
         })
         .catch((error) => { dispatch(loginUserFail)});
 };
+
+export const checkAuthState = ()=>dispatch => {
+    authRef.onAuthStateChanged(user => {
+        if (user) {
+            return dispatch(loginUserSuccess(user));
+        } else {
+            dispatch(loginUserFail(false))
+        }
+    });
+}
 
 export const dispatchLogin = () => {
     return { type: LOGIN_USER_SUCCESS };
