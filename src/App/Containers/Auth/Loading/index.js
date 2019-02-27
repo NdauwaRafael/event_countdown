@@ -9,7 +9,10 @@ import {
 } from 'react-native';
 class Loading extends Component{
     componentDidMount() {
-        
+
+            this.props.navigation.navigate(this.props.auth.loggedIn ? 'List' : 'Login')
+
+
     }
     render() {
         return (
