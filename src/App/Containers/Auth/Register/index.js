@@ -12,8 +12,8 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            password: ''
+            email: 'raphynje@gmail.com',
+            password: 'pass123'
         };
 
         this.signUp = this.signUp.bind(this);
@@ -28,13 +28,10 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password
         };
-        this.props.actions.createUser(user)
-            .then(user => {
-                this.props.navigation.navigate(Loading);
-            })
-            .catch(error => {
 
-            })
+        this.props.actions.createUser(user);
+        this.props.navigation.navigate('Loading');
+
     };
 
     render() {
@@ -65,6 +62,7 @@ class Register extends Component {
                     </Item>
 
                     <Button
+                        onPress={()=>this.signUp()}
                         style={{marginTop: 15}}
                         full
                         rounded
