@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 
 class Login extends Component {
     constructor(props) {
@@ -19,18 +19,22 @@ class Login extends Component {
         this.login = this.login.bind(this);
     }
 
-    componentWillUpdate(nextProps) {
-        if (nextProps.auth) {
-            this.props.navigation.goBack()
-        }
+    static navigationOptions = {
+        headerLeft: null,
+    };
+
+
+    componentDidMount() {
+        this.props.navigation.navigate(this.props.auth.loggedIn ? 'List' : 'Login')
     }
+
 
     signUp() {
         this.props.navigation.navigate('Register');
     };
 
     login() {
-        // loginUser(this.state.email, this.state.password)
+
     };
 
     render() {
@@ -40,7 +44,7 @@ class Login extends Component {
                     <Item floatingLabel>
                         <Label>Email</Label>
                         <Input
-                            onChangeText={(email)=>this.setState({email})}
+                            onChangeText={(email) => this.setState({email})}
                             autoCorrect={false}
                             autoCapitalize="none"/>
                     </Item>
@@ -48,7 +52,7 @@ class Login extends Component {
                     <Item floatingLabel>
                         <Label>Password</Label>
                         <Input
-                            onChangeText={(password)=>this.setState({password})}
+                            onChangeText={(password) => this.setState({password})}
                             secureTextEntry={true}
                             autoCorrect={false}
                             autoCapitalize="none"/>
@@ -59,7 +63,7 @@ class Login extends Component {
                         full
                         rounded
                         success
-                        onPress={()=>this.login}>
+                        onPress={() => this.login}>
                         <Text style={{color: '#fff'}}>Login</Text>
                     </Button>
 
@@ -68,7 +72,7 @@ class Login extends Component {
                         full
                         rounded
                         info
-                        onPress={()=>this.signUp()}>
+                        onPress={() => this.signUp()}>
                         <Text style={{color: '#fff'}}>Sign Up!</Text>
                     </Button>
                 </Form>
@@ -86,8 +90,8 @@ const styles = StyleSheet.create({
     }
 });
 
-function mapStateToProps({ auth }) {
-    return { auth };
+function mapStateToProps({auth}) {
+    return {auth};
 }
 
 export default connect(mapStateToProps)(Login);

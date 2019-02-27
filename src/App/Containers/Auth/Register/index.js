@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
-import { Container, Content,  Form, Input, Item, Button, Label, Left, Right, Body, Title, Icon} from 'native-base';
+import {Container, Content, Form, Input, Item, Button, Label, Left, Right, Body, Title, Icon} from 'native-base';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from '../../../../CountdownEventsStore/actions/SignUp'
@@ -13,15 +13,49 @@ class Register extends Component {
         super(props);
         this.state = {
             email: 'raphynje@gmail.com',
-            password: 'pass123'
+            password: 'pass123',
+            confirmPassword: '',
+            errors: {}
         };
 
+        this.signUp = this.signUp.bind(this);
         this.signUp = this.signUp.bind(this);
     }
 
     static navigationOptions = {
         title: 'Register User',
     };
+
+    emailIsValid(email) {
+        const emailRegex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i;
+        return emailRegex.test(String(email).toLowerCase());
+    }
+
+    userIsValid() {
+        let isValid = true;
+        let {email, password, confirmPassword, errors} = this.state;
+
+        if (password !== confirmPassword) {
+            errors.confirmPassword = 'Password Do not Match';
+            isValid = false;
+        } else {
+            errors.confirmPassword = ""
+        }
+
+        if (password.length <= 3) {
+            errors.password = 'Password Too Short';
+            isValid = false;
+        } else {
+            errors.password = ''
+        }
+
+        if (!this.emailIsValid(email)) {
+            errors.email = 'Enter a valid Email';
+            isValid = false;
+        } else {
+            errors.email = ''
+        }
+    }
 
     signUp() {
         let user = {
@@ -62,7 +96,7 @@ class Register extends Component {
                     </Item>
 
                     <Button
-                        onPress={()=>this.signUp()}
+                        onPress={() => this.signUp()}
                         style={{marginTop: 15}}
                         full
                         rounded
