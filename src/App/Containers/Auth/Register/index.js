@@ -5,6 +5,8 @@ import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
 import { connect } from "react-redux";
+import {bindActionCreators} from "redux";
+import * as authActions from '../../../../CountdownEventsStore/actions/SignUp'
 
 class Register extends Component {
     constructor(props) {
@@ -73,5 +75,10 @@ const styles = StyleSheet.create({
 function mapStateToProps({ auth }) {
     return { auth };
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators(authActions, dispatch)
+    }
+};
 
-export default connect(mapStateToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
