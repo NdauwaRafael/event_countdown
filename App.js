@@ -8,7 +8,7 @@ import Loading from './src/App/Containers/Auth/Loading';
 import configureStore from './src/CountdownEventsStore';
 import {checkAuthState} from './src/CountdownEventsStore/actions/Login';
 import {Provider} from 'react-redux';
-import * as firebase from "firebase";
+
 
 const store = configureStore();
 store.dispatch(checkAuthState);
