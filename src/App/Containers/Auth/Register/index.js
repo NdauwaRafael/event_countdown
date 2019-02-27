@@ -88,6 +88,7 @@ class Register extends Component {
                         <Item floatingLabel error={errors.email.length > 0}>
                             <Label>Email</Label>
                             <Input
+                                onChangeText={(email) => this.setState({email})}
                                 autoCorrect={false}
                                 autoCapitalize="none"/>
                         </Item>
@@ -100,6 +101,7 @@ class Register extends Component {
                         <Item floatingLabel error={errors.password.length > 0}>
                             <Label>Password</Label>
                             <Input
+                                onChangeText={(password) => this.setState({password})}
                                 secureTextEntry={true}
                                 autoCorrect={false}
                                 autoCapitalize="none"/>
@@ -111,7 +113,7 @@ class Register extends Component {
                         <Item floatingLabel error={errors.confirmPassword.length > 0}>
                             <Label>Confirm Password</Label>
                             <Input
-
+                                onChangeText={(confirmPassword) => this.setState({confirmPassword})}
                                 secureTextEntry={true}
                                 autoCorrect={false}
                                 autoCapitalize="none"/>
