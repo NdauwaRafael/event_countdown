@@ -20,7 +20,7 @@ export default (state = initialState.auth, action) => {
         case(LOG_OUT):
             return {loggingOut: true};
         case(CREATE_USER_SUCCESS):
-            return {...state};
+            return {...state, user: action.user, loggedIn: true, userId: action.user.uid;};
         case(CREATE_USER_FAIL):
             return {...state};
         default:
