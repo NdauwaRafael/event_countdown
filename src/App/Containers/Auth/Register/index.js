@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
-import { Container, Content, Header, Form, Input, Item, Button, Label, Left, Right, Body, Title, Icon} from 'native-base';
+import { Container, Content,  Form, Input, Item, Button, Label, Left, Right, Body, Title, Icon} from 'native-base';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as authActions from '../../../../CountdownEventsStore/actions/SignUp'
@@ -18,6 +18,10 @@ class Register extends Component {
 
         this.signUp = this.signUp.bind(this);
     }
+
+    static navigationOptions = {
+        title: 'Register User',
+    };
 
     signUp() {
         let user = {
@@ -36,7 +40,6 @@ class Register extends Component {
     render() {
         return (
             <Container style={styles.container}>
-
                 <Form>
                     <Item floatingLabel>
                         <Label>Email</Label>
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
         padding: 10,
         flex: 1,
         backgroundColor: "#fff",
-        
+
     }
 });
 
