@@ -3,61 +3,71 @@
  */
 import React from 'react';
 import { Platform } from 'react-native';
+import { Icon } from 'expo';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
-
+import AuthLogin from "../../Containers/Auth/Login";
+import AuthRegister from "../../Containers/Auth/Register";
+import EventList from "../../Containers/Events/EventList";
+import EventForm from "../../Containers/Events/EventForm";
 const HomeStack = createStackNavigator({
-    Home: HomeScreen,
+    Home: EventList,
 });
 
 HomeStack.navigationOptions = {
     tabBarLabel: 'Home',
     tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            focused={focused}
+        <Icon.Ionicons
             name={
                 Platform.OS === 'ios'
                     ? `ios-information-circle${focused ? '' : '-outline'}`
                     : 'md-information-circle'
             }
-        />
+        size={26}>
+
+        </Icon.Ionicons>
     ),
 };
 
-const LinksStack = createStackNavigator({
-    Links: LinksScreen,
+const LoginStack = createStackNavigator({
+    Login: AuthLogin,
 });
 
-LinksStack.navigationOptions = {
-    tabBarLabel: 'Links',
+LoginStack.navigationOptions = {
+    tabBarLabel: 'Login',
     tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            focused={focused}
-            name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-        />
+        <Icon.Ionicons
+            name={
+                Platform.OS === 'ios'
+                    ? `ios-information-circle${focused ? '' : '-outline'}`
+                    : 'md-information-circle'
+            }
+            size={26}>
+
+        </Icon.Ionicons>
     ),
 };
 
-const SettingsStack = createStackNavigator({
-    Settings: SettingsScreen,
+const RegisterStack = createStackNavigator({
+    Settings: AuthRegister,
 });
 
-SettingsStack.navigationOptions = {
-    tabBarLabel: 'Settings',
+RegisterStack.navigationOptions = {
+    tabBarLabel: 'Sign Up',
     tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            focused={focused}
-            name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-        />
+        <Icon.Ionicons
+            name={
+                Platform.OS === 'ios'
+                    ? `ios-information-circle${focused ? '' : '-outline'}`
+                    : 'md-information-circle'
+            }
+            size={26}>
+
+        </Icon.Ionicons>
     ),
 };
 
 export default createBottomTabNavigator({
     HomeStack,
-    LinksStack,
-    SettingsStack,
+    LoginStack,
+    RegisterStack,
 });

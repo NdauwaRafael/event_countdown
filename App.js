@@ -8,7 +8,7 @@ import Loading from './src/App/Containers/Auth/Loading';
 import configureStore from './src/CountdownEventsStore';
 import {checkAuthState} from './src/CountdownEventsStore/actions/Login';
 import {Provider} from 'react-redux';
-import Navigator from './src/App/Components/Navigator';
+import Navigator from './src/App/Components/Navigator/MainTabNavigator';
 
 
 const store = configureStore();
@@ -31,14 +31,14 @@ const AppNavigator = createStackNavigator({
         screen: EventForm
     }
 });
-const AppComponent = createAppContainer(AppNavigator);
+// const AppComponent = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
 
     render() {
         return (
             <Provider store={store}>
-                <AppComponent/>
+                <AppNavigator/>
             </Provider>
         );
     }
