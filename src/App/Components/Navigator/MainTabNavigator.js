@@ -9,12 +9,13 @@ import AuthLogin from "../../Containers/Auth/Login";
 import AuthRegister from "../../Containers/Auth/Register";
 import EventList from "../../Containers/Events/EventList";
 import EventForm from "../../Containers/Events/EventForm";
-const HomeStack = createStackNavigator({
-    Home: EventList,
+
+const EventListStack = createStackNavigator({
+    Events: EventList,
 });
 
-HomeStack.navigationOptions = {
-    tabBarLabel: 'Home',
+EventListStack.navigationOptions = {
+    tabBarLabel: 'Events',
     tabBarIcon: ({ focused }) => (
         <Icon.Ionicons
             name={
@@ -46,46 +47,9 @@ CreateEventStack.navigationOptions = {
     )
 }
 
-const LoginStack = createStackNavigator({
-    Login: AuthLogin,
-});
 
-LoginStack.navigationOptions = {
-    tabBarLabel: 'Login',
-    tabBarIcon: ({ focused }) => (
-        <Icon.Ionicons
-            name={
-                Platform.OS === 'ios'
-                    ? `ios-lock`
-                    : 'md-lock'
-            }
-            size={26}>
-
-        </Icon.Ionicons>
-    ),
-};
-
-const RegisterStack = createStackNavigator({
-    Settings: AuthRegister,
-});
-
-RegisterStack.navigationOptions = {
-    tabBarLabel: 'Sign Up',
-    tabBarIcon: ({ focused }) => (
-        <Icon.Ionicons
-            name={
-                Platform.OS === 'ios'
-                    ? `ios-person`
-                    : 'md-person'
-            }
-            size={26}>
-
-        </Icon.Ionicons>
-    ),
-};
 
 export default createBottomTabNavigator({
-    HomeStack,
-    LoginStack,
-    RegisterStack,
+    EventListStack,
+    CreateEventStack
 });
