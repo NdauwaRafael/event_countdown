@@ -28,6 +28,24 @@ HomeStack.navigationOptions = {
     ),
 };
 
+const CreateEventStack = createStackNavigator({
+    CreateEvent: EventForm
+});
+
+CreateEventStack.navigationOptions = {
+    tabBarLabel: 'Create Event',
+    tabBarIcon: ({focus})=>(
+        <Icon.Ionicons
+            name={
+                Platform.OS === 'ios'
+                    ? `ios-create`
+                    : 'md-create'
+            }
+            size={26}
+        />
+    )
+}
+
 const LoginStack = createStackNavigator({
     Login: AuthLogin,
 });
