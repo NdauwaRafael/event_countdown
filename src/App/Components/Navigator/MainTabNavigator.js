@@ -19,8 +19,8 @@ HomeStack.navigationOptions = {
         <Icon.Ionicons
             name={
                 Platform.OS === 'ios'
-                    ? `ios-information-circle${focused ? '' : '-outline'}`
-                    : 'md-information-circle'
+                    ? `ios-home`
+                    : 'md-home'
             }
         size={26}>
 
@@ -38,8 +38,8 @@ LoginStack.navigationOptions = {
         <Icon.Ionicons
             name={
                 Platform.OS === 'ios'
-                    ? `ios-information-circle${focused ? '' : '-outline'}`
-                    : 'md-information-circle'
+                    ? `ios-lock`
+                    : 'md-lock'
             }
             size={26}>
 
@@ -57,8 +57,8 @@ RegisterStack.navigationOptions = {
         <Icon.Ionicons
             name={
                 Platform.OS === 'ios'
-                    ? `ios-information-circle${focused ? '' : '-outline'}`
-                    : 'md-information-circle'
+                    ? `ios-person`
+                    : 'md-person'
             }
             size={26}>
 
