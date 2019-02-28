@@ -8,7 +8,7 @@ import Loading from './src/App/Containers/Auth/Loading';
 import configureStore from './src/CountdownEventsStore';
 import {checkAuthState} from './src/CountdownEventsStore/actions/Login';
 import {Provider} from 'react-redux';
-import Navigator from './src/App/Components/Navigator/MainTabNavigator';
+import Navigator from './src/App/Components/Navigator/AppNavigator';
 
 
 const store = configureStore();
@@ -38,7 +38,7 @@ export default class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <AppNavigator/>
+                <Navigator/>
             </Provider>
         );
     }
