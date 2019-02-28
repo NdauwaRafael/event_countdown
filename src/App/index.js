@@ -5,19 +5,17 @@ import React, {Component} from 'react';
 import {bindActionCreators} from "redux";
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
+import Navigator from './Components/Navigator/AppNavigator';
 
 class AppRoot extends Component {
-    constructor(props, context) {
-        super(props, context);
-
+    constructor(props) {
+        super(props);
         this.state = {}
     };
 
     render() {
         return (
-            <div>
-
-            </div>
+            <Navigator />
         );
     }
 }
