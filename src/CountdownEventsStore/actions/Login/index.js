@@ -15,7 +15,7 @@ export const loginUserSuccess = (resp) => {
 export const loginUserFail = (resp) => {
     return {
         type: LOGIN_USER_FAILED,
-        user: resp,
+        error: error,
     }
 };
 
@@ -24,7 +24,7 @@ export const loginUser = ({email, password}) => dispatch => {
         .then((resp) => {
             return dispatch(loginUserSuccess(resp));
         })
-        .catch((error) => { dispatch(loginUserFail)});
+        .catch((error) => { dispatch(loginUserFail(error.toString()))});
 };
 
 export const checkAuthState = ()=>dispatch => {
@@ -32,7 +32,7 @@ export const checkAuthState = ()=>dispatch => {
         if (user) {
             return dispatch(loginUserSuccess(user));
         } else {
-            dispatch(loginUserFail(false))
+            dispatch(loginUserFail('logged out'))
         }
     });
 }

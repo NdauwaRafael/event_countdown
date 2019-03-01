@@ -16,7 +16,7 @@ export default (state = initialState.auth, action) => {
             const userId = action.user.uid;
             return {...state, loggedIn: true, userId};
         case(LOGIN_USER_FAILED):
-            return {...state, loggedIn: false};
+            return {...state, loggedIn: false, loginError: state.error};
         case(LOG_OUT):
             return {loggingOut: true};
         case(CREATE_USER_SUCCESS):

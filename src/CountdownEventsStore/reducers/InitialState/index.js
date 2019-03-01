@@ -7,5 +7,6 @@ export default {
         loggedIn: false,
         signingIn: false,
         loggingOut: false,
+        loginError: ''
     }
 }
