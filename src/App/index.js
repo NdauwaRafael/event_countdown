@@ -4,8 +4,10 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from "redux";
 import PropTypes from 'prop-types';
+import {View} from 'react-native';
 import {connect} from 'react-redux'
 import Navigator from './Components/Navigator/AppNavigator';
+import MainTabNavigator from './Components/Navigator/MainTabNavigator'
 
 class AppRoot extends Component {
     constructor(props) {
@@ -15,7 +17,9 @@ class AppRoot extends Component {
 
     render() {
         return (
-            <Navigator />
+            <View>
+                { (this.props.loggedIn) ? <Navigator /> : <MainTabNavigator />}
+            </View>
         );
     }
 }
