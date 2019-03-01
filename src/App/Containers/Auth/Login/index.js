@@ -6,7 +6,8 @@ import React, {Component} from 'react';
 import {StyleSheet, Text} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
 import {connect} from "react-redux";
-
+import * as authActions from '../../../../CountdownEventsStore/actions/Login'
+import {bindActionCreators} from "redux";
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +35,11 @@ class Login extends Component {
     };
 
     login() {
-
+        let user = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        this.props.actions.loginUser(user)
     };
 
     render() {
@@ -93,6 +98,10 @@ const styles = StyleSheet.create({
 function mapStateToProps({auth}) {
     return {auth};
 }
-
-export default connect(mapStateToProps)(Login);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators(authActions, dispatch)
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 

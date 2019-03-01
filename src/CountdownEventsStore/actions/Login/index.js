@@ -19,8 +19,8 @@ export const loginUserFail = (resp) => {
     }
 };
 
-export const loginUser = () => dispatch => {
-    authRef.signInWithEmailAndPassword(email, pass)
+export const loginUser = ({email, password}) => dispatch => {
+    authRef.signInWithEmailAndPassword(email, password)
         .then((resp) => {
             return dispatch(loginUserSuccess(resp));
         })
