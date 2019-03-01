@@ -35,6 +35,11 @@ class Register extends Component {
         return emailRegex.test(String(email).toLowerCase());
     }
 
+    passwordIsValid(password) {
+        const passwordRegex = /^(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+        return passwordRegex.test(password);
+    }
+
     userIsValid() {
         let isValid = true;
         let {email, password, confirmPassword, errors} = this.state;
@@ -46,6 +51,12 @@ class Register extends Component {
             errors.confirmPassword = ""
         }
 
+        if (!this.passwordIsValid(password)) {
+            errors.password = 'Password must contain a special Character,and  at least one uppercase character';
+            isValid = false;
+        } else {
+            errors.password = ''
+        }
         if (password.length <= 3) {
             errors.password = 'Password Too Short';
             isValid = false;
@@ -69,6 +80,7 @@ class Register extends Component {
         if (!this.userIsValid()) {
             return;
         }
+
         let user = {
             email: this.state.email,
             password: this.state.password
