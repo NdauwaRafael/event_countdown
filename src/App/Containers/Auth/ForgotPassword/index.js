@@ -37,7 +37,7 @@ class ForgotPassword extends Component{
                         rounded
                         success
                         onPress={() => this.resetPassword}>
-                        <Text style={{color: '#fff'}}>Request Email</Text>
+                        <Text style={{color: '#fff'}}>Request password</Text>
                     </Button>
 
                 </Form>
