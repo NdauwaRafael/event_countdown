@@ -14,4 +14,6 @@ export default createAppContainer(createSwitchNavigator({
     Register: AuthRegister,
     Main: MainTabNavigator,
     Form: EventForm
+},{
+    backBehavior: 'none',
 }));
