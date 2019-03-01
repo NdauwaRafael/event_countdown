@@ -52,17 +52,12 @@ class Register extends Component {
         }
 
         if (!this.passwordIsValid(password)) {
-            errors.password = 'Password must contain a special Character,and  at least one uppercase character';
+            errors.password = 'Password must contain at least one special Character, uppercase character, one numeric value, and must be 8 characters long';
             isValid = false;
         } else {
             errors.password = ''
         }
-        if (password.length <= 3) {
-            errors.password = 'Password Too Short';
-            isValid = false;
-        } else {
-            errors.password = ''
-        }
+
 
         if (!this.emailIsValid(email)) {
             errors.email = 'Enter a valid Email';
