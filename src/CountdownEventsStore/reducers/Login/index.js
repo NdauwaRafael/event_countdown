@@ -14,7 +14,8 @@ let initialState = {
     loggedIn: false,
     signingIn: false,
     loggingOut: false,
-    loginError: ''
+    loginError: '',
+    user: {}
 }
 
 export default (state = initialState, action) => {
