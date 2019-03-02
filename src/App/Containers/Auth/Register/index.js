@@ -80,9 +80,8 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password
         };
-
         this.props.actions.createUser(user);
-        this.props.navigation.navigate('Loading');
+        this.props.navigation.navigate('List');
 
     };
 

@@ -2,12 +2,13 @@
  * Created by Raphael Karanja on 2019-02-28.
  */
 import React, {Component} from 'react';
-import {bindActionCreators} from "redux";
-import {connect} from 'react-redux'
 import Navigator from './Components/Navigator/AppNavigator';
-import * as authActions from '../CountdownEventsStore/actions/Login'
+import {Provider} from 'react-redux';
+import configureStore from "../CountdownEventsStore";
 
-class AppRoot extends Component {
+const store = configureStore();
+
+export default class AppRoot extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -16,27 +17,10 @@ class AppRoot extends Component {
 
     render() {
         return (
-            <Navigator/>
+            <Provider store={store}>
+                <Navigator/>
+            </Provider>
         );
     }
 }
 
-AppRoot.propTypes = {
-    //course: PropTypes.array.isRequired,
-    //actions: PropTypes.object.isRequired
-};
-const mapStateToProps = (state, ownProps) => {
-    return {
-        //course: state.course
-    }
-};
-const mapDispatchToProps = (dispatch) => {
-    return {
-        actions: bindActionCreators(authActions, dispatch)
-    }
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AppRoot)
