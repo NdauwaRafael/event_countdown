@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, View, Alert} from 'react-native'
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
 import {connect} from "react-redux";
 import * as authActions from '../../../../CountdownEventsStore/actions/Login'
@@ -24,9 +24,15 @@ class Login extends Component {
         headerLeft: null,
     };
 
-
     componentDidMount() {
+        this.props.actions.checkAuthState();
+    }
+
+
+    componentDidUpdate(prevProps) {
+        const { auth } = this.props;
         this.props.navigation.navigate(this.props.auth.loggedIn ? 'List' : 'Login')
+        if (!prevProps.auth.loginError && auth.loginError) Alert.alert('error', auth.loginError);
     }
 
 
@@ -39,13 +45,7 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        this.props.actions.loginUser(user)
-            .then((error)=>{
-                console.log('success')
-            })
-            .catch(error=>{
-                console.log(error, 'error')
-            })
+        this.props.actions.loginUser(user);
     };
 
     render() {
