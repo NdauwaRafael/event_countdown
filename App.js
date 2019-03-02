@@ -1,8 +1,9 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import AppRoot from './src/App/index';
 import configureStore from "./src/CountdownEventsStore";
 const store = configureStore();
+import AppRoot from './src/App/index';
+
 
 export default class App extends React.Component {
     render() {

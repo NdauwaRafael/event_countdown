@@ -4,16 +4,19 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Alert} from 'react-native'
-import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
+import {Container,  Form, Input, Item, Button, Label} from 'native-base';
 import {connect} from "react-redux";
 import * as authActions from '../../../../CountdownEventsStore/actions/Login'
 import {bindActionCreators} from "redux";
+
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            loginError: this.props.loginError,
+            hello: ''
         };
 
         this.signUp = this.signUp.bind(this);
@@ -24,17 +27,27 @@ class Login extends Component {
         headerLeft: null,
     };
 
+
     componentDidMount() {
         this.props.actions.checkAuthState();
     }
 
 
     componentDidUpdate(prevProps) {
-        const { auth } = this.props;
-        this.props.navigation.navigate(this.props.auth.loggedIn ? 'List' : 'Login')
-        if (!prevProps.auth.loginError && auth.loginError) Alert.alert('error', auth.loginError);
-    }
 
+        const {loggingIn, loggedIn, loginError} = this.props;
+
+        if (loggedIn) {
+            this.props.navigation.navigate(  'Main');
+        }
+
+        if (this.state.loginError.length > 0 ){
+            Alert.alert('error', loginError);
+        };
+
+        console.log(this.state);
+
+    }
 
     signUp() {
         this.props.navigation.navigate('Register');
@@ -46,7 +59,12 @@ class Login extends Component {
             password: this.state.password
         }
         this.props.actions.loginUser(user);
+
     };
+
+componentWillReceiveProps(nextProps, nextContext) {
+    console.log(nextProps)
+}
 
     render() {
         return (
@@ -56,7 +74,7 @@ class Login extends Component {
                         <Text>{this.props.loginError}</Text>
                     </View>
                     <Item floatingLabel>
-                        <Label>Email</Label>
+                        <Label>Email {this.props.loginError}</Label>
                         <Input
                             onChangeText={(email) => this.setState({email})}
                             autoCorrect={false}
@@ -77,7 +95,7 @@ class Login extends Component {
                         full
                         rounded
                         success
-                        onPress={() => this.login}>
+                        onPress={() => this.login()}>
                         <Text style={{color: '#fff'}}>Login</Text>
                     </Button>
 
@@ -104,9 +122,15 @@ const styles = StyleSheet.create({
     }
 });
 
-function mapStateToProps({auth}) {
-    return {auth};
+function mapStateToProps(state) {
+    let {auth} = state;
+    return {
+        loggingIn: auth.loggingIn,
+        loggedIn: auth.loggedIn,
+        loginError: auth.loginError
+    };
 }
+
 const mapDispatchToProps = (dispatch) => {
     return {
         actions: bindActionCreators(authActions, dispatch)

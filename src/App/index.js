@@ -11,7 +11,6 @@ class AppRoot extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        props.actions.checkAuthState();
     };
 
 

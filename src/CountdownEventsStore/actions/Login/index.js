@@ -15,16 +15,19 @@ export const loginUserSuccess = (resp) => {
 export const loginUserFail = (resp) => {
     return {
         type: LOGIN_USER_FAILED,
-        error: error,
+        error: resp,
     }
 };
 
 export const loginUser = ({email, password}) => dispatch => {
+
     authRef.signInWithEmailAndPassword(email, password)
         .then((resp) => {
             return dispatch(loginUserSuccess(resp));
         })
-        .catch((error) => { dispatch(loginUserFail(error.toString()))});
+        .catch((error) => {
+            return dispatch(loginUserFail(error.toString()))
+        });
 };
 
 export const checkAuthState = ()=>dispatch => {
