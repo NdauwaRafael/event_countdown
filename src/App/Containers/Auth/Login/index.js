@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps(state) {
-    let {auth} = state;
+    let {auth} = Object.assign({}, state);
     return {
         loggingIn: auth.loggingIn,
         loggedIn: auth.loggedIn,
