@@ -8,6 +8,7 @@ import MainTabNavigator from './MainTabNavigator';
 import AuthLogin from "../../Containers/Auth/Login";
 import AuthRegister from "../../Containers/Auth/Register";
 import EventForm from "../../Containers/Events/EventForm";
+import EventList from "../../Containers/Events/EventList";
 import CustomHeader from '../CustomHeader'
 
 export default createAppContainer(createStackNavigator({
@@ -24,7 +25,12 @@ export default createAppContainer(createStackNavigator({
                 headerTitle: "Sign Up"
             }
         },
-        Main: MainTabNavigator,
+        Main: {
+            screen: EventList,
+            navigationOptions:{
+                headerTitle: "Your Evants"
+            }
+        },
         Form: {
             screen: EventForm,
             navigationOptions: {

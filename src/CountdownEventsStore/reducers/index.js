@@ -3,7 +3,7 @@
  */
 import {combineReducers} from 'redux';
 import auth from './Login';
-import events from  './events'
+import events from  './Events'
 const rootReducer = combineReducers({
     auth,
     events

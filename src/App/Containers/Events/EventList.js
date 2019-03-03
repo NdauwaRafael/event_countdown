@@ -31,24 +31,28 @@ class EventList extends Component {
     }
 
     componentDidMount() {
-        setInterval(() => {
-            this.setState({
-                events: this.state.events.map(evt => ({
-                    ...evt,
-                    timer: Date.now()
-                }))
-            })
-        }, 1000)
+        // setInterval(() => {
+        //     this.setState({
+        //         events: this.props.events.map(evt => ({
+        //             ...evt,
+        //             timer: Date.now()
+        //         }))
+        //     })
+        // }, 1000)
 
         this.props.actions.fetchEvents();
     };
+
+    componentDidUpdate(){
+        console.log('updated')
+    }
 
     handleAddEventPress() {
         this.props.navigation.navigate('Form')
     }
 
     render() {
-        const {events} = this.state;
+        const {events} = this.props;
         return [
             <FlatList
                 key="eventList"
@@ -68,9 +72,18 @@ class EventList extends Component {
     }
 }
 
+const setEventsTimer = (events)=>{
+    setInterval(() => {
+        return  events.map(evt => ({
+            ...evt,
+            timer: Date.now()
+        }))
+    }, 1000)
+}
+
 const mapStateToProps = (state, ownProps) => {
     return {
-        events: state.events
+        events: setEventsTimer(state.events)
     }
 };
 const mapDispatchToProps = (dispatch) => {

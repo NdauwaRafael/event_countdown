@@ -6,6 +6,7 @@ import Navigator from './Components/Navigator/AppNavigator';
 import {Provider} from 'react-redux';
 import configureStore from "../CountdownEventsStore";
 
+
 const store = configureStore();
 
 export default class AppRoot extends Component {
