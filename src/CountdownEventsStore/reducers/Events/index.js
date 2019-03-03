@@ -11,5 +11,7 @@ export default (state = initialState, action) => {
                 let events = action.events;
                 return [...events];
             break;
+        default :
+            return state;
     }
 }
