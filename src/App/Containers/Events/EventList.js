@@ -3,6 +3,9 @@ import {StyleSheet, FlatList, Text} from 'react-native';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import EventCard from './EventCard';
+import {connect} from 'react-redux';
+import * as eventsActions from '../../../CountdownEventsStore/actions/Events';
+import {bindActionCreators} from "redux";
 
 
 const styles = StyleSheet.create({
@@ -69,4 +72,14 @@ class EventList extends Component {
     }
 }
 
-export default EventList;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        events: state.events
+    }
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators(eventsActions, dispatch)
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(EventList);
