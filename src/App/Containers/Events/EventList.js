@@ -27,10 +27,6 @@ class EventList extends Component {
         this.handleAddEventPress = this.handleAddEventPress.bind(this)
     }
 
-    static navigationOptions = {
-        title: 'Your Events',
-    };
-
     componentDidMount() {
         setInterval(() => {
             this.setState({
