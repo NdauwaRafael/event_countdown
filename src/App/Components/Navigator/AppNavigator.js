@@ -33,7 +33,7 @@ export default createAppContainer(createStackNavigator({
         }
     },
     {
-        initialRouteName: "Login",
+        initialRouteName: "Main",
         navigationOptions: {
             header: props => <CustomHeader {...props} />,
             headerStyle: {
