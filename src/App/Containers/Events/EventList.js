@@ -25,7 +25,7 @@ class EventList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            events: []
+            events: this.props.events
         };
         this.handleAddEventPress = this.handleAddEventPress.bind(this)
     }
@@ -40,11 +40,7 @@ class EventList extends Component {
             })
         }, 1000)
 
-        const events = require('../../../../db.json').events.map(e => ({
-            ...e,
-            date: new Date(e.date)
-        }));
-        this.setState({events});
+        this.props.actions.fetchEvents();
     };
 
     handleAddEventPress() {
